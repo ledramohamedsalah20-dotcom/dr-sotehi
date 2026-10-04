@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dr Rimane Sotehi | Médecine Esthétique</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #26302c;
+            --green: #68786e;
+            --cream: #f8f5ef;
+            --beige: #ebe3d7;
+            --gold: #b79a6b;
+            --white: #ffffff;
+            --text: #555b57;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 28px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            color: var(--dark);
+        }
+
+        .logo span {
+            display: block;
+            font-family: "DM Sans", sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            color: var(--green);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 34px;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+        }
+
+        .hero-content {
+            padding: 170px 8% 100px 12%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 11px;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-size: clamp(52px, 7vw, 90px);
+            line-height: 1.02;
+            margin-bottom: 28px;
+        }
+
+        h1 em {
+            font-weight: 400;
+            color: var(--green);
+        }
+
+        .hero-text {
+            max-width: 550px;
+            color: var(--text);
+            font-weight: 300;
+            font-size: 17px;
+            margin-bottom: 38px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 27px;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: .5px;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--dark);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--green);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--dark);
+            color: var(--dark);
+        }
+
+        .hero-visual {
+            background:
+                linear-gradient(
+                    rgba(91, 106, 97, .16),
+                    rgba(91, 106, 97, .08)
+                ),
+                url("https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85");
+
+            background-size: cover;
+            background-position: center;
+            min-height: 650px;
+        }
+
+        /* RATING */
+
+        .rating {
+            background: var(--dark);
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .stars {
+            color: #dac18c;
+            letter-spacing: 3px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            padding: 120px 8%;
+        }
+
+        .section-header {
+            max-width: 650px;
+            margin-bottom: 65px;
+        }
+
+        .section-header small {
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 62px);
+            font-weight: 400;
+            margin-top: 15px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #d9d3ca;
+        }
+
+        .service {
+            background: var(--cream);
+            padding: 45px 30px;
+            min-height: 260px;
+            transition: .3s;
+        }
+
+        .service:hover {
+            background: var(--beige);
+        }
+
+        .service-number {
+            color: var(--gold);
+            margin-bottom: 65px;
+            font-size: 12px;
+        }
+
+        .service h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* APPROACH */
+
+        .approach {
+            background: var(--beige);
+            padding: 120px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .approach-photo {
+            min-height: 590px;
+            background:
+                url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85")
+                center/cover;
+        }
+
+        .approach h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 400;
+            margin: 16px 0 27px;
+        }
+
+        .approach p {
+            color: var(--text);
+            margin-bottom: 18px;
+            max-width: 520px;
+        }
+
+        /* REVIEWS */
+
+        .reviews {
+            padding: 120px 8%;
+            text-align: center;
+        }
+
+        .reviews .score {
+            font-family: "Playfair Display", serif;
+            font-size: 80px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .reviews p {
+            color: var(--text);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: var(--dark);
+            color: white;
+            padding: 120px 8%;
+            text-align: center;
+        }
+
+        .contact small {
+            color: #d7bc8d;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .contact h2 {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-size: clamp(42px, 6vw, 70px);
+            margin: 18px auto 25px;
+        }
+
+        .contact p {
+            color: #ccd0cd;
+            margin-bottom: 35px;
+        }
+
+        .contact .btn-primary {
+            background: white;
+            color: var(--dark);
+        }
+
+        .contact .btn-primary:hover {
+            background: var(--beige);
+        }
+
+        /* INFO */
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            background: #1e2723;
+            color: white;
+            text-align: center;
+        }
+
+        .info div {
+            padding: 45px 20px;
+            border-right: 1px solid rgba(255,255,255,.1);
+        }
+
+        .info strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .info span {
+            color: #adb6b1;
+            font-size: 13px;
+        }
+
+        footer {
+            padding: 28px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 850px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 150px 8% 80px;
+            }
+
+            .hero-visual {
+                min-height: 450px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .approach {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width: 520px) {
+
+            h1 {
+                font-size: 52px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rating {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Dr Rimane Sotehi
+        <span>Médecine esthétique</span>
+    </div>
+
+    <ul>
+        <li><a href="#services">Expertises</a></li>
+        <li><a href="#cabinet">Le cabinet</a></li>
+        <li><a href="#contact">Rendez-vous</a></li>
+    </ul>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Médecine esthétique • Anti-âge • Nutrition • Laser
+        </div>
+
+        <h1>
+            Révéler votre
+            <em>équilibre naturel.</em>
+        </h1>
+
+        <p class="hero-text">
+            Une approche personnalisée de la médecine esthétique,
+            centrée sur l'écoute, l'harmonie et des soins adaptés
+            aux besoins de chaque patient.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="btn btn-primary"
+                href="https://wa.me/213562129936"
+                target="_blank">
+                Prendre rendez-vous
+            </a>
+
+            <a
+                class="btn btn-secondary"
+                href="tel:+213562129936">
+                Appeler le cabinet
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-visual"></div>
+
+</section>
+
+
+<div class="rating">
+
+    <div class="stars">★★★★★</div>
+
+    <div>
+        <strong>4,9 / 5</strong>
+        &nbsp; • &nbsp;
+        28 avis Google
+    </div>
+
+</div>
+
+
+<section class="services" id="services">
+
+    <div class="section-header">
+
+        <small>Expertises</small>
+
+        <h2>
+            Une prise en charge adaptée à vos besoins
+        </h2>
+
+    </div>
+
+    <div class="service-grid">
+
+        <article class="service">
+
+            <div class="service-number">01</div>
+
+            <h3>Médecine esthétique</h3>
+
+            <p>
+                Une approche personnalisée afin de préserver
+                l'harmonie et le naturel.
+            </p>
+
+        </article>
+
+
+        <article class="service">
+
+            <div class="service-number">02</div>
+
+            <h3>Anti-âge</h3>
+
+            <p>
+                Un accompagnement adapté aux besoins et aux
+                objectifs de chaque patient.
+            </p>
+
+        </article>
+
+
+        <article class="service">
+
+            <div class="service-number">03</div>
+
+            <h3>Nutrition</h3>
+
+            <p>
+                Une approche globale orientée vers l'équilibre
+                et le bien-être.
+            </p>
+
+        </article>
+
+
+        <article class="service">
+
+            <div class="service-number">04</div>
+
+            <h3>Laser</h3>
+
+            <p>
+                Des soins réalisés dans un environnement médical
+                professionnel et attentif.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="approach" id="cabinet">
+
+    <div class="approach-photo"></div>
+
+    <div>
+
+        <small class="eyebrow">
+            Notre philosophie
+        </small>
+
+        <h2>
+            Chaque patient est unique.
+        </h2>
+
+        <p>
+            La consultation permet de comprendre vos attentes et
+            d'établir une prise en charge personnalisée.
+        </p>
+
+        <p>
+            L'objectif est de privilégier une approche médicale
+            attentive, naturelle et adaptée à chaque situation.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="reviews">
+
+    <small class="eyebrow">Avis patients</small>
+
+    <div class="score">4,9</div>
+
+    <div class="stars">★★★★★</div>
+
+    <p>
+        Une réputation construite auprès des patients du cabinet.
+    </p>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+    <small>Rendez-vous</small>
+
+    <h2>
+        Prenez rendez-vous avec le cabinet
+    </h2>
+
+    <p>
+        Contactez directement le cabinet pour obtenir davantage
+        d'informations ou convenir d'un rendez-vous.
+    </p>
+
+    <a
+        href="https://wa.me/213562129936"
+        target="_blank"
+        class="btn btn-primary">
+
+        Contacter sur WhatsApp
+
+    </a>
+
+</section>
+
+
+<section class="info">
+
+    <div>
+        <strong>Adresse</strong>
+        <span>
+            Cité 1013, bâtiment 05 n°923<br>
+            El Khroub, Constantine
+        </span>
+    </div>
+
+    <div>
+        <strong>Téléphone</strong>
+        <span>+213 562 12 99 36</span>
+    </div>
+
+    <div>
+        <strong>Horaires</strong>
+        <span>
+            Samedi – Jeudi<br>
+            08:00 – 16:00
+        </span>
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Dr Rimane Sotehi — Tous droits réservés
+</footer>
+
+</body>
+</html>
